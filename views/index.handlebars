@@ -1,0 +1,56 @@
+
+<div class="row" class="boxes">
+  <div class="col-md-5" id="non-devoured">
+    <h2>Here's your choice of Burgers!</h2>
+
+    <div>
+      {{#each burgers}}
+        {{#unless this.devoured}}
+        <hr>
+        <div class="row fresh_burger_list">
+          <div class="col-md-6">
+            <p>
+              {{this.burger_name}}
+            </p>
+          </div>
+          <div class="col-md-6">
+            <form class="fresh_burger_form" action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="burger_id" value="{{this.id}}">
+              <button type="submit" class="eat_button">Eat it!</button>
+            </form>
+          </div>
+        </div>
+        {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="col-md-2">
+    <div id="add_burger_div">
+      <h2>Add a Burger</h2>
+      <form class="create-update-form" action="/" method="POST">
+        <div class="form-group">
+          <input type="text" id="burger_input" name="name" placeholder="eg: Veggie Burger">
+        </div>
+        <button type="submit" id="add_burger">Add Burger</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-5" id="devoured">
+    <h2>These are in someone's belly..</h2>
+    <div>
+      {{#each burgers}}
+        {{#if this.devoured}}
+        <hr>
+          <p>
+            {{this.burger_name}}
+
+            <form action="/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="false">
+            </form>
+          </p>
+        {{/if}}
+      {{/each}}
+    </div>
+
+  </div>
+</div>

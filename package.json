@@ -1,0 +1,29 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "A burger eating app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashishdommety/burger-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashishdommety/burger-app/issues"
+  },
+  "homepage": "https://github.com/ashishdommety/burger-app#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.9",
+    "mysql2": "^1.3.6",
+    "sequelize": "^4.3.1"
+  }
+}
